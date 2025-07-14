@@ -1,8 +1,8 @@
 package main
 
 type Response struct {
-	statusCode int
-	message    string
+	StatusCode int
+	Message    string
 }
 
 func CreateUserHandler(u CreateUserUsecase) *Response {
@@ -13,12 +13,12 @@ func createUserHandler(u CreateUserUsecase) *Response {
 	res, err := u.Do()
 	if err != nil {
 		return &Response{
-			statusCode: 400,
-			message:    err.Error(),
+			StatusCode: 400,
+			Message:    err.Error(),
 		}
 	}
 	return &Response{
-		statusCode: 200,
-		message:    res,
+		StatusCode: 200,
+		Message:    res,
 	}
 }
